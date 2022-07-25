@@ -17,3 +17,21 @@ void main(void)
     }
             
 }
+
+void initSysPins(void)
+{
+    ANSELA = 0b00000000;
+    TRISA = 0b11111010;
+}
+
+void initSysDevices(void)
+{
+    CCPTMRS1 = 0b00000100;
+    PWM6CON = 0b00000000;
+    T2PR = 124;
+    PWM6DCH = 0b00011111;
+    PWM6DCL = 0b01000000;
+    T2CON = 0b11110000;
+    T2CLKCON = 0b00000001;
+    RA2PPS = 0x0E;
+}
