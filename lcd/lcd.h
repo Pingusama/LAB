@@ -12,6 +12,10 @@ void lcdWriteCtrl(char x);
 
 void lcdWriteData(char x);
 
-void lcdSetPos(unsigned char row, unsigned char col);
+void lcdSetPosition(unsigned char r, unsigned char c);
+
+void lcdWriteMessage (char message [],unsigned char row);
+
+void lcdClearDisplay(void);
 
 #endif // __LCD_H__

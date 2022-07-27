@@ -6,8 +6,8 @@
 #include <stdint.h>
 #include <stdio.h>
 
-uint8_t get_humidity_from_temp(uint8_t temp);
+unsigned int calHumidity(unsigned int temp);
 
-void display_humidity(uint8_t humd);
+void showHumidity(unsigned int humd);
 
 #endif // __HUMIDITY_H__

@@ -23,6 +23,7 @@ void initLCD()
     lcdWriteCtrl(0b00000110); // Entry mode - inc addr, no shift
     lcdWriteCtrl(0b00000001); // Clear display & home position
 }
+
 // Function to write control instruction, 4-bit at a time
 void lcdWriteCtrl(char x)
 {
@@ -54,13 +55,30 @@ void lcdWriteData(char x)
     __delay_ms(1);
 }
 
-void lcdSetPos(unsigned char row, unsigned char col)
+void lcdSetPosition(unsigned char r, unsigned char c)
 {
     unsigned char ramAddr; // Ctrl instruction to be sent
-    if (row == 1)
-        ramAddr = col -1;
-    else
-        ramAddr = 0x40+col-1;
-    lcdWriteCtrl(ramAddr+0x80);
+    if(r == 1) // If row is 1:
+    ramAddr = 0x00 + c - 1; // Subtract 1 from the col
+    else // If row is 2:
+    ramAddr = 0x40 + c - 1; // Add 0x40 to ramAddr, and
+    // subtract 1 from the col
+    lcdWriteCtrl(ramAddr + 0x80); // Add 0x80 to ramAddr and write
+    // ctrl instruction
 }
 
+
+void lcdWriteMessage (char message [],unsigned char row)
+{
+    unsigned char i;
+    lcdSetPosition (1,1);
+    for (i=0; message[i] !=0; i++)
+    {
+        lcdWriteData(message[i]);
+    }
+}
+
+void lcdClearDisplay(void)
+{
+    lcdWriteCtrl(0b00000001); // Clear display & home position
+}

@@ -18,6 +18,8 @@
         "LAB9_3.C": "cpp",
         "LAB9_ISR.C": "cpp",
         "LAB9_ISR2.C": "cpp",
-        "math.h": "c"
+        "math.h": "c",
+        "functional": "c",
+        "stdio.h": "c"
     }
 }
