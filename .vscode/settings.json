@@ -1,0 +1,23 @@
+{
+    "files.associations": {
+        "LAB4_1.C": "cpp",
+        "LAB4_2.C": "cpp",
+        "LAB4_3.C": "cpp",
+        "LAB4_4.C": "cpp",
+        "LAB5_1.C": "cpp",
+        "LAB5_2.C": "cpp",
+        "LAB5_3.C": "cpp",
+        "LAB6_1.C": "cpp",
+        "LAB6_2.C": "cpp",
+        "LAB7_1.C": "cpp",
+        "LAB7_2.C": "cpp",
+        "LAB7_ADC.C": "cpp",
+        "LAB7_ADC2.C": "cpp",
+        "LAB8_2.C": "cpp",
+        "LAB9_1.C": "cpp",
+        "LAB9_3.C": "cpp",
+        "LAB9_ISR.C": "cpp",
+        "LAB9_ISR2.C": "cpp",
+        "math.h": "c"
+    }
+}
