@@ -20,6 +20,7 @@
         "LAB9_ISR2.C": "cpp",
         "math.h": "c",
         "functional": "c",
-        "stdio.h": "c"
+        "stdio.h": "c",
+        "stdint.h": "c"
     }
 }

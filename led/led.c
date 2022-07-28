@@ -1,6 +1,6 @@
 #include <xc.h>
 #include "config.h"
-
+#include "led.h"
 
 void shiftPortALEDs(void)
 {
@@ -29,3 +29,50 @@ void togglePortALEDs(void)
        
 }
 
+void onLED(led_color_t color)
+{
+    switch(color)
+    {
+        case YELLOW:
+        {
+            PORTAbits.RA2 = 1;
+            break;
+        }
+        case RED:
+        {
+            PORTAbits.RA0 = 1;
+            break;
+        }
+        case GREEN:
+        {
+            PORTAbits.RA4 = 1;
+            break;
+        }
+        default:
+            break;
+    }
+}
+
+void offLED(led_color_t color)
+{
+    switch(color)
+    {
+        case YELLOW:
+        {
+            PORTAbits.RA2 = 0;
+            break;
+        }
+        case RED:
+        {
+            PORTAbits.RA0 = 0;
+            break;
+        }
+        case GREEN:
+        {
+            PORTAbits.RA4 = 0;
+            break;
+        }
+        default:
+            break;
+    }
+}
