@@ -44,9 +44,6 @@ void __interrupt() isr(void)
         // PORTAbits.RA0 = ~PORTAbits.RA0;
         // PORTAbits.RA1 = ~PORTAbits.RA1;
 
-        // Reset TMR0H and TMR0L
-        TMR0H = 0xFE;
-        TMR0L = 0x0C;
         // Increment timer count
         if(timer0_cnt >= ULONG_MAX){
             timer0_cnt = 1;
@@ -292,9 +289,9 @@ void initTimer0(void)
     T0CON1 = 0b01000010;
     // Set the timer period to 1 second, here the FOSC/4 is interpreted as 8MHz 
     // set high byte
-    TMR0H = 0xFE;
+    TMR0H = 0xFE0C;
     // set low byte
-    TMR0L = 0x0C;
+    TMR0L = 0x00;
     // reset TMR0 Overflow Interrupt Flag bit
     PIR0bits.TMR0IF = 0;
     // enable the TMR0 Overflow Interrupt 
